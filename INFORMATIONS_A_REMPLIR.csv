@@ -1,0 +1,11 @@
+Information;Valeur à remplir;Explication
+NUMÉRO DE TÉLÉPHONE;;Numéro au format +33 6 XX XX XX XX pour le bouton "Appeler maintenant" du site
+EMAIL DE CONTACT;;L'adresse email qui recevra les demandes de devis des clients (ex: contact@hexagone-manutention.fr)
+SERVEUR SMTP - Hôte;;Le serveur d'envoi d'email de votre fournisseur (ex: smtp.gmail.com ou smtp.ionos.fr)
+SERVEUR SMTP - Port;;Port du serveur SMTP (généralement 587 pour TLS ou 465 pour SSL)
+SERVEUR SMTP - Utilisateur;;L'adresse email utilisée pour se connecter au serveur SMTP
+SERVEUR SMTP - Mot de passe;;Le mot de passe (ou mot de passe d'application) pour le serveur SMTP
+SERVEUR SMTP - SSL;;true ou false selon votre fournisseur (true pour le port 465 - false pour le port 587)
+URL DU SITE DEFINITIVE;;L'URL finale du site (ex: https://hexagone-manutention.fr) pour le référencement
+ADRESSE PHYSIQUE (optionnel);;L'adresse de l'entreprise si vous souhaitez l'afficher sur le site
+SIRET / SIREN (optionnel);;Pour les mentions légales si vous souhaitez les ajouter

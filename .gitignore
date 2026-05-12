@@ -1,0 +1,7 @@
+node_modules/
+.env
+public/uploads/
+mdp.txt
+data/
+/logo.png
+/logohexagone.jpg

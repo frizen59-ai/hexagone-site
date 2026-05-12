@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- START SEO OPTIMIZATION -->
+  <title>Vente de Chariots Élévateurs et Nacelles d'Occasion | Hexagone Manutention</title>
+  <meta name="description" content="Découvrez notre grand stock national de chariots élévateurs et nacelles d'occasion révisés. Électrique, gaz et diesel. Livraison partout en France. Devis sous 24h.">
+  <meta property="og:title" content="Vente de Chariots & Nacelles d'Occasion | Hexagone Manutention">
+  <meta property="og:description" content="Découvrez notre grand stock de chariots élévateurs et nacelles d'occasion révisés. Livraison partout en France. Devis gratuit sous 24h.">
+  <meta property="og:type" content="website">
+  <!-- TODO: Remplacer par la vraie image OG après réception -->
+  <meta property="og:image" content="https://placehold.co/1200x630/111111/FFB400?text=Hexagone+Manutention+Occasion">
+  <link rel="icon" type="image/png" href="logo.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoDealer",
+    "name": "Hexagone Manutention",
+    "description": "Vente de chariots élévateurs et nacelles d'occasion reconditionnés avec livraison dans toute la France.",
+    "url": "https://hexagone-manutention.fr",
+    "logo": "https://placehold.co/500x500/111111/FFB400?text=HEX"
+  }
+  </script>
+  <!-- END SEO OPTIMIZATION -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: #f5f4f0;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+    }
+
+    /* ── HAMBURGER MENU (Mobile) ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(17,17,17,0.98);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: #FFB400; }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .custom-logo-img {
+      height: 38px;
+      width: auto;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .nav-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .nav-name span { color: #FFB400; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: #FFB400; }
+
+    .nav-cta {
+      background: #FFB400;
+      color: #111 !important;
+      padding: 7px 16px;
+      border-radius: 4px;
+    }
+
+    .nav-cta:hover { background: #e6a300; color: #111 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: #111;
+      color: #fff;
+      padding: 4rem 2rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 70px solid rgba(255,180,0,0.07);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 30%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 40px solid rgba(255,180,0,0.04);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title em { color: #FFB400; font-style: normal; }
+
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: #FFB400;
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #FFB400;
+      color: #111;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 13px 28px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+
+    .btn-primary:hover { background: #e6a300; }
+
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 13px 28px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: #FFB400;
+      padding: 0.7rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .trust-bar::-webkit-scrollbar { display: none; }
+
+    .trust-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #111;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      padding: 0 1.25rem 0 0;
+    }
+
+    .trust-item:not(:last-child)::after {
+      content: '·';
+      margin-left: 1.25rem;
+      color: rgba(0,0,0,0.3);
+      font-size: 18px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section-count {
+      font-size: 14px;
+      color: #888;
+    }
+
+    /* ── FILTERS ── */
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .chip {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      padding: 6px 16px;
+      border-radius: 99px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .chip:hover { border-color: #999; color: #333; }
+    .chip.active { background: #111; border-color: #111; color: #fff; }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #e8e6e0;
+      overflow: hidden;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: #f7f6f2;
+      padding: 16px;
+      display: block;
+    }
+
+    .card-body { padding: 16px 18px; }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .badge-gaz   { background: #faeeda; color: #854F0B; }
+    .badge-elec  { background: #EAF3DE; color: #3B6D11; }
+    .badge-diesel { background: #f1efe8; color: #5F5E5A; }
+    .badge-nacelle { background: #e6f1fb; color: #185FA5; }
+
+    .card-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .card-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 10px;
+      margin-bottom: 14px;
+    }
+
+    .spec { font-size: 13px; color: #666; }
+    .spec strong { color: #222; font-weight: 500; }
+    .spec-full { grid-column: 1 / -1; }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid #f0ede6;
+    }
+
+    .price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #111;
+      line-height: 1;
+    }
+
+    .price-label { font-size: 11px; color: #999; margin-top: 2px; }
+
+    .ask-btn {
+      background: #111;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      padding: 9px 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+
+    .ask-btn:hover { background: #333; }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: #fff;
+      border-top: 1px solid #e8e6e0;
+      border-bottom: 1px solid #e8e6e0;
+    }
+
+    .about-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .about-title em { color: #FFB400; font-style: normal; }
+
+    .about-text {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .about-feature-icon {
+      width: 22px;
+      height: 22px;
+      background: #FFB400;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .about-numbers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-num-card {
+      background: #f5f4f0;
+      border-radius: 8px;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .about-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: #FFB400;
+      line-height: 1;
+    }
+
+    .about-num-label {
+      font-size: 12px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ── CONTACT STRIP ── */
+    .contact-strip {
+      background: #111;
+      color: #fff;
+      padding: 3rem 2rem;
+    }
+
+    .contact-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .contact-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .contact-headline em { color: #FFB400; font-style: normal; }
+    .contact-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+    .contact-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 4px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+
+    .btn-phone { background: #FFB400; color: #111; }
+    .btn-phone:hover { background: #e6a300; }
+    .btn-email { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+    .btn-email:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a0a0a;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-social a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-social a:hover { color: #FFB400; }
+
+    /* ── FAQ ── */
+    .faq-section { max-width: 800px; margin: 5rem auto; padding: 0 1.5rem; }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2.2rem; text-transform: uppercase; text-align: center; margin-bottom: 2rem; color:#111; }
+    .faq-item { background: #fff; border: 1px solid #e8e6e0; border-radius: 6px; margin-bottom: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+    .faq-question { width: 100%; text-align: left; padding: 1.25rem 1.5rem; font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 16px; background: transparent; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #111; }
+    .faq-question:hover { background: #fafafa; }
+    .faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; color: #555; line-height: 1.6; }
+    .faq-item.active .faq-answer { padding: 0 1.5rem 1.5rem; max-height: 500px; }
+    .faq-icon { transition: transform 0.3s; color:#FFB400; }
+    .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+    /* ── UTILITIES ── */
+    .hidden { display: none !important; }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .stock-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: #3B6D11;
+      background: #EAF3DE;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-title { letter-spacing: -1px; }
+      .hero-stats { gap: 1.5rem; }
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-brand">
+      <img src="logo.png" alt="Hexagone Manutention Logo" class="custom-logo-img">
+      <div class="nav-name">Hexagone <span>Manutention</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#catalogue">Catalogue</a></li>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu de navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Des machines<br>fiables,<br><em>livrées vite.</em></h1>
+      <p class="hero-sub">Chariots élévateurs et nacelles d'occasion reconditionnés. Stock disponible immédiatement. Livraison possible partout en France.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">100+</div>
+          <div class="hero-stat-label">Machines en stock</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Contrôlées avant vente</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">24h</div>
+          <div class="hero-stat-label">Réponse garantie</div>
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#catalogue" class="btn-primary">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="15" y2="18"/></svg>
+          Voir le catalogue
+        </a>
+        <a href="#contact" class="btn-ghost">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12 19.79 19.79 0 0 1 1.65 3.13 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.82-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Nous contacter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Machines révisées & contrôlées
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Prix nets HT affichés
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Livraison possible partout en France
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Contrôle VGP assuré
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Devis gratuit sous 24h
+    </div>
+  </div>
+
+  <!-- CATALOGUE -->
+  <section id="catalogue">
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Stock disponible</h2>
+        <span class="section-count" id="count-label">-- machines</span>
+      </div>
+
+      <div class="filter-row">
+        <button class="chip active" data-filter="all" onclick="filterCards(this)">Tout voir</button>
+        <button class="chip" data-filter="chariot" onclick="filterCards(this)">Chariots élévateurs</button>
+        <button class="chip" data-filter="nacelle" onclick="filterCards(this)">Nacelles</button>
+        <button class="chip" data-filter="elec" onclick="filterCards(this)">Électrique</button>
+        <button class="chip" data-filter="gaz" onclick="filterCards(this)">Gaz</button>
+        <button class="chip" data-filter="diesel" onclick="filterCards(this)">Diesel</button>
+      </div>
+
+      <div class="grid" id="grid">
+        <!-- Loader affiché pendant la récupération des données JSON -->
+        <div id="loader" style="grid-column: 1 / -1; text-align: center; padding: 3rem 0;">
+          <svg style="animation: spin 1s linear infinite;" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FFB400" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v4"/></svg>
+          <div style="margin-top: 14px; font-weight: 600; color: #555; font-size: 15px;">Chargement des machines...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="a-propos" class="about-section">
+    <div class="about-inner">
+      <div>
+        <h2 class="about-title">Votre allié<br><em>manutention</em><br>de confiance</h2>
+        <p class="about-text">
+          Hexagone Manutention est spécialisé dans la vente de chariots élévateurs et de nacelles d'occasion. Chaque machine est soigneusement sélectionnée, contrôlée et prête à travailler.
+        </p>
+        <ul class="about-features">
+          <li class="about-feature">
+            <div class="about-feature-icon"></div>
+            Machines inspectées avant chaque mise en vente
+          </li>
+          <li class="about-feature">
+            <div class="about-feature-icon"></div>
+            Prix transparents, sans mauvaise surprise
+          </li>
+          <li class="about-feature">
+            <div class="about-feature-icon"></div>
+            Livraison possible via notre partenaire transporteur
+          </li>
+          <li class="about-feature">
+            <div class="about-feature-icon"></div>
+            Accompagnement personnalisé à chaque vente
+          </li>
+        </ul>
+      </div>
+      <div class="about-numbers">
+        <div class="about-num-card">
+          <div class="about-num">100+</div>
+          <div class="about-num-label">Machines en stock</div>
+        </div>
+        <div class="about-num-card">
+          <div class="about-num">24h</div>
+          <div class="about-num-label">Réponse garantie</div>
+        </div>
+        <div class="about-num-card">
+          <div class="about-num">100%</div>
+          <div class="about-num-label">Contrôlées</div>
+        </div>
+        <div class="about-num-card">
+          <div class="about-num">GAZ<br>ELEC<br>DIESEL</div>
+          <div class="about-num-label" style="font-size:10px;">Toutes énergies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-section">
+    <h2 class="faq-title">Questions Fréquentes</h2>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Effectuez-vous des livraisons partout en France ?
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">Oui absolument, Hexagone Manutention couvre 100% du territoire national. Que vous soyez dans les Hauts-de-France, en région PACA ou en Bretagne, nous organisons le transport routier logistique directement jusqu'à vos locaux.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Dans quel état sont les machines d'occasion ?
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">Chaque chariot élévateur ou nacelle subit un contrôle pointu avant sa mise en vente. Les organes de sécurité, l'hydraulique et les batteries sont vérifiés pour vous garantir un matériel fiable, prêt pour une intégration immédiate sur votre chaîne de production.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Quel est le délai pour obtenir un engin ?
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">Puisque notre force différenciante est <strong>le très grand nombre de machines disponibles physiquement en stock</strong>, nous sommes capables d'expédier votre commande dans des délais extrêmement rapides, bien inférieurs à l'achat du neuf ou des courtiers avec flux tendu.</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-strip">
+    <div class="contact-inner">
+      <div>
+        <div class="contact-headline">Une question ?<br><em>On vous répond vite.</em></div>
+        <div class="contact-sub">Disponible du lundi au vendredi · Devis gratuit sous 24h</div>
+      </div>
+      <div class="contact-btns">
+        <a class="contact-btn btn-phone" href="tel:+33685446640">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12 19.79 19.79 0 0 1 1.65 3.13 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.82-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          06 85 44 66 40
+        </a>
+        <a class="contact-btn btn-phone" href="tel:+33652476493">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12 19.79 19.79 0 0 1 1.65 3.13 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.82-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          06 52 47 64 93
+        </a>
+        <a class="contact-btn btn-email" href="mailto:hexagonemanutention@gmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hexagonemanutention@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL CONTACT -->
+  <style>
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1000;
+      display: none; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .modal-overlay.open { display: flex; opacity: 1; }
+    .modal-box {
+      background: #fff; border-radius: 8px; width: 90%; max-width: 500px;
+      padding: 2rem; position: relative;
+      transform: translateY(20px); transition: transform 0.3s;
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 15px; right: 15px;
+      background: transparent; border: none; font-size: 24px; cursor: pointer; color: #888;
+    }
+    .modal-close:hover { color: #111; }
+    .modal-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+    .modal-sub { color: #555; font-size: 14px; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; font-size: 14px; color: #333;}
+    .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Barlow', sans-serif; font-size: 14px;}
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .btn-submit { background: #FFB400; color: #111; padding: 12px; width: 100%; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 16px; border-radius: 4px; cursor: pointer; }
+    .btn-submit:hover { background: #e6a300; }
+    .modal-success { display: none; text-align: center; padding: 2rem 0; }
+    .modal-success h3 { color: #3B6D11; font-size: 1.5rem; margin-bottom: 10px; }
+    #modal-form-content { display: block; }
+  </style>
+  <div class="modal-overlay" id="contactModal" onclick="if(event.target===this) closeContactModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeContactModal()">&times;</button>
+      
+      <div id="modal-form-content">
+        <h2 class="modal-title">Obtenir un devis</h2>
+        <p class="modal-sub">Laissez-nous vos coordonnées pour obtenir votre prix final avec transport. <strong>Réponse garantie sous 24h.</strong></p>
+        <form id="contactForm" onsubmit="submitContactForm(event)">
+          <div class="form-group">
+            <label>Sujet de la demande</label>
+            <input type="text" id="contactSubject" required>
+          </div>
+          <div class="form-group">
+            <label>Votre Nom / Société</label>
+            <input type="text" id="contactName" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="form-group"><label>Téléphone</label><input type="tel" id="contactPhone" required></div>
+            <div class="form-group"><label>Email</label><input type="email" id="contactEmail" required></div>
+          </div>
+          <div class="form-group">
+            <label>Message (Optionnel)</label>
+            <textarea id="contactMessage"></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="contactSubmitBtn">Demander un devis sans engagement</button>
+          <div style="text-align: center; margin-top: 10px; font-size: 13px; color: #888;">🔒 Vos informations sont 100% sécurisées</div>
+        </form>
+      </div>
+
+      <div class="modal-success" id="modal-success-content">
+        <h3>✅ Message envoyé !</h3>
+        <p style="color: #666; font-size: 14px;">Un conseiller Hexagone Manutention va prendre en compte votre demande et vous recontacter très rapidement.</p>
+        <button class="btn-submit" style="margin-top: 1.5rem;" onclick="closeContactModal()">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61586835214499" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com/in/hexagone-manutention-8089a23a7/" target="_blank">LinkedIn</a>
+    </div>
+    <div class="footer-text">© <script>document.write(new Date().getFullYear())</script> Hexagone Manutention · Tous droits réservés · De la fourche au sommet</div>
+  </footer>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#catalogue" onclick="closeMobileMenu()">Catalogue</a>
+    <a href="#a-propos" onclick="closeMobileMenu()">À propos</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#contact" onclick="closeMobileMenu()">Nous contacter</a>
+  </div>
+
+  <script>
+    // === PROTECTION XSS ===
+    function esc(str) {
+      if (str == null) return '';
+      const div = document.createElement('div');
+      div.textContent = String(str);
+      return div.innerHTML;
+    }
+
+    let allMachines = [];
+
+    // Récupérer les données depuis l'API
+    fetch('/api/machines')
+      .then(res => res.json())
+      .then(data => {
+        allMachines = data;
+        renderCards(allMachines);
+      })
+      .catch(err => {
+        console.error("Erreur API:", err);
+        document.getElementById('grid').innerHTML = '<p style="grid-column:1/-1;">Erreur lors du chargement des machines.</p>';
+      });
+
+    function renderCards(machines) {
+      const grid = document.getElementById('grid');
+      if (!machines.length) {
+        grid.innerHTML = '<p style="grid-column:1/-1; padding: 2rem;">Aucune machine disponible.</p>';
+        document.getElementById('count-label').textContent = '0 machine';
+        return;
+      }
+      
+      grid.innerHTML = machines.map(m => {
+        const safeType = esc(m.type);
+        const safeEnergy = esc(m.energy);
+        const safeName = esc(m.name);
+        const safeId = esc(m.id);
+        const safeImage = esc(m.image);
+        const safeYear = esc(m.year);
+        const safeHours = esc(m.hours);
+        const safePrice = typeof m.price === 'number' ? m.price.toLocaleString('fr-FR') : esc(m.price);
+        const safePriceLabel = esc(m.priceLabel);
+        
+        const badgeClass = safeEnergy === 'gaz' ? 'badge-gaz' : safeEnergy === 'elec' ? 'badge-elec' : safeType === 'nacelle' ? 'badge-nacelle' : 'badge-diesel';
+        let badgeText = safeEnergy.charAt(0).toUpperCase() + safeEnergy.slice(1);
+        if (safeType === 'nacelle') {
+          badgeText = `Nacelle · ${safeEnergy === 'elec' ? 'Électrique' : safeEnergy}`;
+        }
+        const specsHtml = (m.specs || []).map(s => `<div class="spec spec-full"><span class="stock-tag">${esc(s)}</span></div>`).join('');
+        
+        return `
+        <div class="card" data-type="${safeType}" data-energy="${safeEnergy}">
+          <img class="card-img" src="${safeImage}" alt="${safeName}" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge ${badgeClass}">${badgeText}</span>
+            <div class="card-name">${safeName}</div>
+            <div class="card-specs">
+              <div class="spec">Année <strong>${safeYear}</strong></div>
+              <div class="spec">Heures <strong>${safeHours}</strong></div>
+              ${safeId.startsWith('NAC_') ? '' : `<div class="spec">Réf. <strong>${safeId}</strong></div>`}
+              ${specsHtml}
+            </div>
+            <div class="card-footer">
+              <div>
+                <div class="price">${safePrice} €</div>
+                <div class="price-label">${safePriceLabel}</div>
+              </div>
+              <button class="ask-btn" onclick="openContactModal('Demande : ${safeName}')">Demander →</button>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+      
+      document.getElementById('count-label').textContent = machines.length + ' machine' + (machines.length > 1 ? 's' : '');
+    }
+
+    function filterCards(chip) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      
+      const filtered = filter === 'all' 
+        ? allMachines 
+        : allMachines.filter(m => m.type === filter || m.energy === filter);
+        
+      renderCards(filtered);
+    }
+
+    // === MODAL LOGIC ===
+    function openContactModal(subjectString) {
+      document.getElementById('contactModal').classList.add('open');
+      document.getElementById('contactSubject').value = subjectString || "Demande d'information générale";
+      document.getElementById('modal-form-content').style.display = 'block';
+      document.getElementById('modal-success-content').style.display = 'none';
+      document.body.style.overflow = 'hidden'; // bloque le scroll du site
+    }
+    
+    function closeContactModal() {
+      document.getElementById('contactModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    
+    function submitContactForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contactSubmitBtn');
+      btn.textContent = 'Envoi en cours...'; btn.disabled = true;
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          subject: document.getElementById('contactSubject').value,
+          name: document.getElementById('contactName').value,
+          phone: document.getElementById('contactPhone').value,
+          email: document.getElementById('contactEmail').value,
+          message: document.getElementById('contactMessage').value
+        })
+      })
+      .then(res => res.json())
+      .then(res => {
+        btn.textContent = 'Envoyer ma demande'; btn.disabled = false;
+        if(res.success) {
+          document.getElementById('modal-form-content').style.display = 'none';
+          document.getElementById('modal-success-content').style.display = 'block';
+          document.getElementById('contactForm').reset();
+          if(res.previewUrl) console.log("Lien vers l'email de test : ", res.previewUrl);
+        } else {
+          alert("Erreur lors de l'envoi du message.");
+        }
+      })
+      .catch(err => {
+        btn.textContent = 'Envoyer ma demande'; btn.disabled = false;
+        alert("Erreur réseau");
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // === HAMBURGER MENU (Mobile) ===
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    function closeMobileMenu() {
+      hamburgerBtn.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  </script>
+
+</body>
+</html>

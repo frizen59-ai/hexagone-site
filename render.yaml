@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: hexagone-manutention
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      # Les variables en dessous devront être configurées via l'interface web de Render
+      # ADMIN_USER, ADMIN_PASSWORD, MONGODB_URI, CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET
