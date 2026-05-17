@@ -5,3 +5,5 @@ mdp.txt
 data/
 /logo.png
 /logohexagone.jpg
+.netlify/
+INFORMATIONS_A_REMPLIR.csv

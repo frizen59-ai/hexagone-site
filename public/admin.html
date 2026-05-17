@@ -176,7 +176,7 @@
     <div id="successMessage" class="success-msg">✅ Super ! La machine a bien été ajoutée au catalogue et la photo importée avec succès.</div>
 
     <div class="form-card">
-      <form action="/api/machines" method="post" enctype="multipart/form-data">
+      <form id="addMachineForm" enctype="multipart/form-data">
         
         <div class="form-group full-width">
           <label>Nom complet du modèle</label>
@@ -234,7 +234,7 @@
           </label>
         </div>
 
-        <button type="submit" class="submit-btn" onclick="this.innerHTML='Création en cours...';">Ajouter la machine au catalogue</button>
+        <button type="submit" class="submit-btn" id="submitMachineBtn">Ajouter la machine au catalogue</button>
       </form>
     </div>
 
@@ -260,7 +260,30 @@
       return div.innerHTML;
     }
 
-    // GESTION DU STOCK
+    // === GESTION DES CREDENTIALS ADMIN ===
+    // Les credentials sont demandés une seule fois et stockés en session
+    function getAuthHeader() {
+      let creds = sessionStorage.getItem('hexAdminCreds');
+      if (!creds) {
+        const user = prompt('Identifiant administrateur :');
+        const pass = prompt('Mot de passe :');
+        if (!user || !pass) {
+          alert('Authentification requise pour accéder à l\'administration.');
+          return null;
+        }
+        creds = btoa(user + ':' + pass);
+        sessionStorage.setItem('hexAdminCreds', creds);
+      }
+      return 'Basic ' + creds;
+    }
+
+    // Authentification au chargement de la page
+    const authHeader = getAuthHeader();
+    if (!authHeader) {
+      document.body.innerHTML = '<div style="text-align:center;padding:4rem;font-size:1.5rem;color:#d03022;">⛔ Accès refusé — Authentification requise</div>';
+    }
+
+    // === GESTION DU STOCK ===
     function loadStock() {
       fetch('/api/machines')
         .then(res => res.json())
@@ -271,7 +294,6 @@
             return;
           }
           list.innerHTML = machines.map(m => {
-            // Utiliser _id MongoDB si disponible, sinon id custom
             const deleteId = esc(m._id || m.id);
             return `
             <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #fafafa; border: 1px solid #eee; border-radius: 6px;">
@@ -291,24 +313,83 @@
     function deleteMachine(id) {
       if(!confirm("Êtes-vous sûr de vouloir supprimer cette machine ?\n(Si elle est vendue, elle disparaîtra du site public instantanément)")) return;
       
-      fetch('/api/machines/' + encodeURIComponent(id), { method: 'DELETE', credentials: 'include' })
+      const auth = getAuthHeader();
+      if (!auth) return;
+
+      fetch('/api/machines/' + encodeURIComponent(id), {
+        method: 'DELETE',
+        headers: { 'Authorization': auth }
+      })
         .then(res => {
+          if (res.status === 401) {
+            sessionStorage.removeItem('hexAdminCreds');
+            alert('Identifiants incorrects. Veuillez réessayer.');
+            location.reload();
+            throw new Error('Auth failed');
+          }
           if (!res.ok) {
             return res.json().then(data => { throw new Error(data.error || 'Erreur serveur'); });
           }
           return res.json();
         })
         .then(res => {
-          if(res.success) {
-            loadStock(); // Recharger la liste
-          } else {
+          if(res && res.success) {
+            loadStock();
+          } else if (res) {
             alert('Erreur lors de la suppression : ' + (res.error || 'Erreur inconnue'));
           }
         })
-        .catch(err => alert('Erreur : ' + err.message));
+        .catch(err => {
+          if (err.message !== 'Auth failed') alert('Erreur : ' + err.message);
+        });
     }
 
     loadStock();
+
+    // === SOUMISSION DU FORMULAIRE D'AJOUT ===
+    document.getElementById('addMachineForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitMachineBtn');
+      btn.textContent = 'Création en cours...';
+      btn.disabled = true;
+
+      const auth = getAuthHeader();
+      if (!auth) { btn.textContent = 'Ajouter la machine au catalogue'; btn.disabled = false; return; }
+
+      const formData = new FormData(this);
+
+      try {
+        const res = await fetch('/api/machines', {
+          method: 'POST',
+          headers: { 'Authorization': auth },
+          body: formData
+        });
+
+        if (res.status === 401) {
+          sessionStorage.removeItem('hexAdminCreds');
+          alert('Identifiants incorrects. Veuillez réessayer.');
+          location.reload();
+          return;
+        }
+
+        if (res.redirected) {
+          window.location.href = res.url;
+          return;
+        }
+
+        if (res.ok) {
+          window.location.href = '/admin.html?success=true';
+        } else {
+          const data = await res.json().catch(() => ({}));
+          alert('Erreur : ' + (data.error || 'Erreur lors de l\'ajout'));
+        }
+      } catch (err) {
+        alert('Erreur réseau : ' + err.message);
+      } finally {
+        btn.textContent = 'Ajouter la machine au catalogue';
+        btn.disabled = false;
+      }
+    });
 
     // Affichage rapide du fichier sélectionné
     const fileInput = document.getElementById('photo-upload');

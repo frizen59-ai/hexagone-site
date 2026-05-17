@@ -1,0 +1,57 @@
+# ============================================
+# NETLIFY — Configuration de déploiement
+# Hexagone Manutention
+# ============================================
+
+[build]
+  # Le dossier public contient les fichiers statiques (index.html, admin.html, images)
+  publish = "public"
+  # Commande d'installation des dépendances pour les fonctions serverless
+  command = "npm install"
+  # Les fonctions serverless sont dans le dossier netlify/functions
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# ============================================
+# REDIRECTIONS
+# ============================================
+
+# Toutes les requêtes /api/* sont redirigées vers les fonctions serverless Netlify
+[[redirects]]
+  from = "/api/machines"
+  to = "/.netlify/functions/machines"
+  status = 200
+
+[[redirects]]
+  from = "/api/machines/:id"
+  to = "/.netlify/functions/machines-delete"
+  status = 200
+  force = true
+  conditions = {Method = ["DELETE"]}
+
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+# Protection de la page admin avec Netlify Identity (Basic Auth via variable d'env)
+# Sera configuré avec les variables d'environnement dans Netlify Dashboard
+
+# SPA fallback — toutes les routes non-API servent index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ============================================
+# HEADERS — Sécurité
+# ============================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
