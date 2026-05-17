@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails Machine | Hexagone Manutention</title>
+  <meta name="description" content="Découvrez cette machine d'occasion sur Hexagone Manutention.">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Barlow', sans-serif; background: #f5f4f0; color: #1a1a1a; }
+    
+    /* ── NAV ── */
+    .nav { position: sticky; top: 0; z-index: 100; background: #111; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 56px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .custom-logo-img { height: 38px; width: auto; flex-shrink: 0; object-fit: contain; }
+    .nav-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase; color: #fff; }
+    .nav-name span { color: #FFB400; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; }
+    .nav-links a:hover { color: #FFB400; }
+    
+    /* ── CONTENT ── */
+    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; min-height: 60vh; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: #111; font-weight: 600; text-decoration: none; margin-bottom: 20px; text-transform: uppercase; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; }
+    .back-link:hover { color: #FFB400; }
+    
+    .machine-details { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .machine-image { width: 100%; height: 500px; object-fit: cover; background: #111; }
+    .machine-info { padding: 40px; display: flex; flex-direction: column; }
+    
+    .machine-id { color: #888; font-family: 'Barlow Condensed', sans-serif; font-size: 16px; margin-bottom: 5px; }
+    .machine-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 36px; text-transform: uppercase; color: #111; margin-bottom: 15px; line-height: 1.1; }
+    .machine-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 28px; color: #FFB400; margin-bottom: 30px; }
+    
+    .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+    .spec-item { background: #f9f9f9; padding: 12px; border-radius: 4px; }
+    .spec-label { font-size: 12px; color: #666; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+    .spec-value { font-weight: 600; color: #111; font-size: 16px; }
+    
+    .machine-desc { font-size: 15px; line-height: 1.6; color: #444; margin-bottom: auto; padding-bottom: 30px; }
+    
+    .btn-contact { background: #111; color: #FFB400; padding: 15px; text-align: center; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 20px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: 0.2s; border: none; width: 100%; }
+    .btn-contact:hover { background: #FFB400; color: #111; }
+    
+    /* FOOTER */
+    footer { background: #111; color: #888; padding: 2rem; text-align: center; margin-top: 40px; }
+    .footer-text { font-size: 13px; }
+    
+    @media (max-width: 768px) {
+      .machine-details { grid-template-columns: 1fr; }
+      .machine-image { height: 300px; }
+      .machine-info { padding: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-brand">
+      <img src="/logo.png" alt="Hexagone Manutention" class="custom-logo-img">
+      <div class="nav-name">Hexagone<span>Manutention</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="/">Accueil</a>
+      <a href="/#catalogue">Catalogue</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <a href="/" class="back-link">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Retour au catalogue
+    </a>
+    
+    <div id="loader" style="text-align: center; padding: 50px; font-family: 'Barlow Condensed', sans-serif; font-size: 24px;">Chargement de la machine...</div>
+    
+    <div id="machine-content" style="display: none;">
+      <div class="machine-details">
+        <img id="m-image" class="machine-image" src="" alt="Machine">
+        <div class="machine-info">
+          <div class="machine-id" id="m-id-text">Réf: ...</div>
+          <h1 class="machine-title" id="m-title">...</h1>
+          <div class="machine-price" id="m-price">...</div>
+          
+          <div class="specs-grid">
+            <div class="spec-item">
+              <div class="spec-label">Année</div>
+              <div class="spec-value" id="m-year">...</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Heures</div>
+              <div class="spec-value" id="m-hours">...</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Énergie</div>
+              <div class="spec-value" id="m-energy" style="text-transform: uppercase;">...</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Type</div>
+              <div class="spec-value" id="m-type" style="text-transform: uppercase;">...</div>
+            </div>
+          </div>
+          
+          <div class="machine-desc">
+            <strong>Équipements & Spécifications :</strong><br>
+            <span id="m-specs">...</span>
+          </div>
+          
+          <a href="tel:+33685446640" class="btn-contact">Appeler pour cette machine</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-text">© <script>document.write(new Date().getFullYear())</script> Hexagone Manutention · Tous droits réservés</div>
+  </footer>
+
+  <script>
+    async function loadMachine() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let id = urlParams.get('id');
+      
+      // Si l'URL est propre (/machine/HEX1272), le fichier est servi par netlify.toml via rewrite
+      // Si le paramètre id n'est pas dans l'URL mais dans le pathname
+      if (!id) {
+        const parts = window.location.pathname.split('/');
+        id = parts[parts.length - 1];
+      }
+
+      if (!id) {
+        document.getElementById('loader').innerText = "Machine introuvable.";
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/machines');
+        const machines = await res.json();
+        const machine = machines.find(m => m.id.replace(/\s+/g, '') === id.replace(/\s+/g, ''));
+
+        if (!machine) {
+          document.getElementById('loader').innerText = "Machine introuvable.";
+          return;
+        }
+
+        // MAJ SEO dynamique (Google bot peut lire le JS généré de nos jours)
+        const typeText = machine.type === 'chariot' ? 'Chariot Élévateur' : 'Nacelle';
+        document.title = `${typeText} ${machine.name} d'occasion | Hexagone Manutention`;
+        document.querySelector('meta[name="description"]').setAttribute("content", `Achetez ce ${typeText} ${machine.name} (${machine.year}, ${machine.hours}). Livraison dans toute la France.`);
+
+        // Remplir le DOM
+        document.getElementById('m-image').src = machine.image;
+        document.getElementById('m-image').alt = `${typeText} ${machine.name}`;
+        document.getElementById('m-id-text').innerText = `Réf: ${machine.id}`;
+        document.getElementById('m-title').innerText = machine.name;
+        document.getElementById('m-price').innerText = `${machine.price.toLocaleString('fr-FR')} € ${machine.priceLabel}`;
+        
+        document.getElementById('m-year').innerText = machine.year;
+        document.getElementById('m-hours').innerText = machine.hours;
+        document.getElementById('m-energy').innerText = machine.energy === 'elec' ? 'Électrique' : machine.energy;
+        document.getElementById('m-type').innerText = machine.type;
+        document.getElementById('m-specs').innerText = machine.specs;
+
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('machine-content').style.display = 'block';
+
+      } catch(err) {
+        document.getElementById('loader').innerText = "Erreur de chargement.";
+      }
+    }
+
+    loadMachine();
+  </script>
+</body>
+</html>

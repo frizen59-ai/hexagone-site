@@ -39,6 +39,23 @@
 # Protection de la page admin avec Netlify Identity (Basic Auth via variable d'env)
 # Sera configuré avec les variables d'environnement dans Netlify Dashboard
 
+# Pages SEO - Catégories
+[[redirects]]
+  from = "/chariots-elevateurs-occasion"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nacelles-occasion"
+  to = "/index.html"
+  status = 200
+
+# Pages SEO - Machines
+[[redirects]]
+  from = "/machine/:id"
+  to = "/machine.html?id=:id"
+  status = 200
+
 # SPA fallback — toutes les routes non-API servent index.html
 [[redirects]]
   from = "/*"

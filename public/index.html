@@ -846,6 +846,29 @@
       </div>
     </div>
   </section>
+  <!-- SEO CONTENT -->
+  <style>
+    .seo-section { background: #fff; padding: 4rem 2rem; color: #333; }
+    .seo-inner { max-width: 900px; margin: 0 auto; line-height: 1.6; font-size: 16px; }
+    .seo-inner h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 28px; text-transform: uppercase; color: #111; margin-bottom: 20px; }
+    .seo-inner h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase; color: #111; margin-top: 30px; margin-bottom: 15px; }
+    .seo-inner p { margin-bottom: 15px; text-align: justify; }
+    .seo-inner strong { color: #111; font-weight: 600; }
+  </style>
+  <section class="seo-section">
+    <div class="seo-inner">
+      <h2>Vente de Chariots Élévateurs et Nacelles d'Occasion en France</h2>
+      <p>Bienvenue chez <strong>Hexagone Manutention</strong>, votre expert national en <strong>vente de matériel de levage et de manutention d'occasion</strong>. Que vous cherchiez à équiper votre entrepôt, votre chantier ou votre exploitation agricole, nous proposons un très vaste choix de <strong>chariots élévateurs</strong> (frontaux, rétractables, transpalettes) et de <strong>nacelles articulées ou ciseaux</strong> prêts à l'emploi.</p>
+      
+      <h3>Pourquoi choisir un chariot élévateur d'occasion ?</h3>
+      <p>L'achat d'un <strong>chariot élévateur d'occasion</strong> représente une économie de 40% à 60% par rapport au neuf, tout en bénéficiant de machines robustes de grandes marques leaders du marché (<strong>Fenwick, Still, Manitou, Toyota, Haulotte, JLG</strong>). Tout notre matériel est rigoureusement contrôlé, révisé et testé avant livraison. Que votre besoin soit en énergie <strong>électrique, gaz ou diesel</strong>, nous disposons du stock nécessaire pour répondre immédiatement à vos urgences logistiques.</p>
+      
+      <h3>Livraison rapide partout en France</h3>
+      <p>Notre force est notre stock physique important. Contrairement aux courtiers, les machines que vous voyez sur notre catalogue en ligne sont disponibles immédiatement. Nous organisons le <strong>transport et la livraison par porte-char sur tout le territoire français</strong> : de l'Île-de-France à la région PACA, en passant par les Hauts-de-France, Rhône-Alpes ou la Bretagne.</p>
+      
+      <p>Nos experts sont à votre disposition pour vous conseiller sur la capacité de levage (tonnage), la hauteur d'élévation (mât standard, duplex, triplex à levée libre) et les accessoires spécifiques (déplacement latéral, positionneur de fourches, cabine fermée). <strong>Demandez votre devis personnalisé gratuit dès aujourd'hui !</strong></p>
+    </div>
+  </section>
 
   <!-- FAQ -->
   <section id="faq" class="faq-section">
@@ -1034,10 +1057,14 @@
         
         return `
         <div class="card" data-type="${safeType}" data-energy="${safeEnergy}">
-          <img class="card-img" src="${safeImage}" alt="${safeName}" loading="lazy">
+          <a href="/machine/${safeId.replace(/\s+/g, '')}" style="display:block; text-decoration:none;">
+            <img class="card-img" src="${safeImage}" alt="${safeName}" loading="lazy">
+          </a>
           <div class="card-body">
             <span class="card-badge ${badgeClass}">${badgeText}</span>
-            <div class="card-name">${safeName}</div>
+            <a href="/machine/${safeId.replace(/\s+/g, '')}" style="text-decoration:none; color:inherit;">
+              <div class="card-name" style="margin-bottom: 10px;">${safeName}</div>
+            </a>
             <div class="card-specs">
               <div class="spec">Année <strong>${safeYear}</strong></div>
               <div class="spec">Heures <strong>${safeHours}</strong></div>
@@ -1049,7 +1076,7 @@
                 <div class="price">${safePrice} €</div>
                 <div class="price-label">${safePriceLabel}</div>
               </div>
-              <button class="ask-btn" onclick="openContactModal('Demande : ${safeName}')">Demander →</button>
+              <a href="/machine/${safeId.replace(/\s+/g, '')}" class="ask-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">Détails →</a>
             </div>
           </div>
         </div>`;
