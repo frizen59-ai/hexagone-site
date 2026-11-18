@@ -163,7 +163,10 @@
   <nav class="nav">
     <div class="hex-logo"></div>
     <div class="nav-name">Hexagone <span>Manutention</span></div>
-    <div class="nav-badge">ESPACE EMPLOYÉ</div>
+    <div class="nav-badge" style="display:flex;align-items:center;gap:12px;">
+      <span>ESPACE EMPLOYÉ</span>
+      <button onclick="logoutAdmin()" style="background:#FFB400;color:#111;border:none;padding:3px 8px;border-radius:3px;font-weight:700;cursor:pointer;font-size:11px;">DÉCONNEXION / CHANGER ID</button>
+    </div>
   </nav>
 
   <div class="admin-container">
@@ -265,16 +268,21 @@
     function getAuthHeader() {
       let creds = sessionStorage.getItem('hexAdminCreds');
       if (!creds) {
-        const user = prompt('Identifiant administrateur :');
+        const user = prompt('Identifiant administrateur (par défaut: admin) :');
         const pass = prompt('Mot de passe :');
         if (!user || !pass) {
           alert('Authentification requise pour accéder à l\'administration.');
           return null;
         }
-        creds = btoa(user + ':' + pass);
+        creds = btoa(user.trim() + ':' + pass.trim());
         sessionStorage.setItem('hexAdminCreds', creds);
       }
       return 'Basic ' + creds;
+    }
+
+    function logoutAdmin() {
+      sessionStorage.removeItem('hexAdminCreds');
+      location.reload();
     }
 
     // Authentification au chargement de la page
@@ -316,7 +324,7 @@
       const auth = getAuthHeader();
       if (!auth) return;
 
-      fetch('/api/machines/' + encodeURIComponent(id), {
+      fetch('/.netlify/functions/machines-delete?id=' + encodeURIComponent(id), {
         method: 'DELETE',
         headers: { 'Authorization': auth }
       })
@@ -328,7 +336,16 @@
             throw new Error('Auth failed');
           }
           if (!res.ok) {
-            return res.json().then(data => { throw new Error(data.error || 'Erreur serveur'); });
+            return res.text().then(text => {
+              let errMsg = 'Erreur serveur (' + res.status + ')';
+              try {
+                const data = JSON.parse(text);
+                if (data.error) errMsg = data.error;
+              } catch (e) {
+                if (text) errMsg = text;
+              }
+              throw new Error(errMsg);
+            });
           }
           return res.json();
         })

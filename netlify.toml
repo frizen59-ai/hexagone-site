@@ -20,16 +20,16 @@
 
 # Toutes les requêtes /api/* sont redirigées vers les fonctions serverless Netlify
 [[redirects]]
+  from = "/api/machines/:id"
+  to = "/.netlify/functions/machines-delete?id=:id"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/machines"
   to = "/.netlify/functions/machines"
   status = 200
-
-[[redirects]]
-  from = "/api/machines/:id"
-  to = "/.netlify/functions/machines-delete"
-  status = 200
   force = true
-  conditions = {Method = ["DELETE"]}
 
 [[redirects]]
   from = "/api/contact"

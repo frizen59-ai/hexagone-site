@@ -20,7 +20,9 @@ function checkAuth(event) {
   
   const decoded = Buffer.from(authHeader.split(' ')[1], 'base64').toString();
   const [user, pass] = decoded.split(':');
-  return user === process.env.ADMIN_USER && pass === process.env.ADMIN_PASSWORD;
+  const expectedUser = (process.env.ADMIN_USER || 'admin').trim();
+  const expectedPass = (process.env.ADMIN_PASSWORD || 'hexagone2025').trim();
+  return user.trim() === expectedUser && pass.trim() === expectedPass;
 }
 
 exports.handler = async (event) => {
@@ -28,7 +30,7 @@ exports.handler = async (event) => {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Access-Control-Allow-Methods': 'DELETE, OPTIONS'
+    'Access-Control-Allow-Methods': 'DELETE, POST, OPTIONS'
   };
 
   // Pré-vol CORS
@@ -36,7 +38,7 @@ exports.handler = async (event) => {
     return { statusCode: 200, headers, body: '' };
   }
 
-  if (event.httpMethod !== 'DELETE') {
+  if (event.httpMethod !== 'DELETE' && event.httpMethod !== 'POST') {
     return { statusCode: 405, headers, body: JSON.stringify({ error: 'Méthode non autorisée' }) };
   }
 
@@ -51,9 +53,22 @@ exports.handler = async (event) => {
   try {
     await connectToDatabase();
 
-    // Extraire l'ID depuis le path : /api/machines/:id
-    const pathParts = event.path.split('/');
-    const idToDelete = decodeURIComponent(pathParts[pathParts.length - 1]);
+    // Extraire l'ID (depuis query string ou path de la requête)
+    let idToDelete = event.queryStringParameters && event.queryStringParameters.id;
+
+    if (!idToDelete) {
+      const pathParts = event.path.split('/');
+      const lastPart = decodeURIComponent(pathParts[pathParts.length - 1]);
+      // S'assurer que le dernier segment du chemin n'est pas le nom de la fonction
+      if (lastPart && lastPart !== 'machines-delete') {
+        idToDelete = lastPart;
+      }
+    }
+
+    if (!idToDelete) {
+      console.log('❌ Aucun ID de machine fourni pour la suppression');
+      return { statusCode: 400, headers, body: JSON.stringify({ error: 'ID requis' }) };
+    }
 
     console.log(`🗑️ Tentative de suppression de la machine: "${idToDelete}"`);
 

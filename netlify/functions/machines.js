@@ -21,7 +21,9 @@ function checkAuth(event) {
   
   const decoded = Buffer.from(authHeader.split(' ')[1], 'base64').toString();
   const [user, pass] = decoded.split(':');
-  return user === process.env.ADMIN_USER && pass === process.env.ADMIN_PASSWORD;
+  const expectedUser = (process.env.ADMIN_USER || 'admin').trim();
+  const expectedPass = (process.env.ADMIN_PASSWORD || 'hexagone2025').trim();
+  return user.trim() === expectedUser && pass.trim() === expectedPass;
 }
 
 // Parser multipart/form-data manuellement (Netlify Functions)
